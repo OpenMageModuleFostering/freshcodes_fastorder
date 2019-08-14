@@ -1,0 +1,28 @@
+/**
+ * Freshcodes
+ *
+ * It is also available through the world-wide-web at this URL:
+ * http://freshcodes.in
+ *
+ * ==============================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * ==============================================================
+ * This package designed for Magento COMMUNITY edition
+ * Freshcodes does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Freshcodes does not provide extension support in case of
+ * incorrect edition usage.
+ * ==============================================================
+ *
+ * @category    Freshcodes
+ * @package     Freshcodes_Fastorder
+ * @version     0.1.0
+ * @author      Freshcodes Team <developers@freshcodes.in>
+ *
+ */
+
+.fastorder-block
+ {
+    padding: 20px 0;
+}
+.fastorder-block input,.fastorder-block textarea{width:100% !important;margin-bottom:8px;}

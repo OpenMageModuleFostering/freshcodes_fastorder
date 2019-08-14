@@ -1,0 +1,53 @@
+<?xml version="1.0"?>  
+<!--
+/**
+ * Freshcodes
+ *
+ * It is also available through the world-wide-web at this URL:
+ * http://freshcodes.in
+ *
+ * ==============================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * ==============================================================
+ * This package designed for Magento COMMUNITY edition
+ * Freshcodes does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Freshcodes does not provide extension support in case of
+ * incorrect edition usage.
+ * ==============================================================
+ *
+ * @category    Freshcodes
+ * @package     Freshcodes_Fastorder
+ * @version     0.1.0
+ * @author      Freshcodes Team <developers@freshcodes.in>
+ *
+ */ 
+ -->
+<layout version="0.1.0">   
+  <checkout_cart_index>
+    <reference name="head">
+            <action method="addCss"><stylesheet>css/fastorder/styles.css</stylesheet></action>
+        </reference>
+	<!--<reference name="content">    
+    		<block type="fastorder/index" name="fastorder_index" template="fastorder/index.phtml"/>    
+	</reference> -->
+	<reference name="checkout.cart.methods">
+        <block type="fastorder/index" name="test.somblock" after="-" template="fastorder/index.phtml" />      
+    </reference>
+  </checkout_cart_index>
+  <!-- If you want to display fastorder block in other specific place in cart page then please follow below step -->
+  <!-- Step 1 - Please comment line no :- 2 to 10 -->
+  <!-- Step 2 - Please comment line no :- 15 to 22 --> 
+  <!-- Step 3 - add this code in php tag :- echo $this->getChildHtml('fastorder_index');   -->
+  <!--<checkout_cart_index>
+    <reference name="head">
+            <action method="addCss"><stylesheet>css/fastorder/styles.css</stylesheet></action>
+        </reference>
+	<reference name="checkout.cart">    
+    		<block type="fastorder/index" name="fastorder_index" as="fastorder_index" template="fastorder/index.phtml"/>    
+	</reference> 
+  </checkout_cart_index>-->
+  <fastorder_email_template>
+        <block type="core/template" name="email_template" template="fastorder/email/template/index.phtml" />
+  </fastorder_email_template>
+</layout> 

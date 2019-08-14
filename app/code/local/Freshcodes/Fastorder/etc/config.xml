@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Freshcodes
+ *
+ * It is also available through the world-wide-web at this URL:
+ * http://freshcodes.in
+ *
+ * ==============================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * ==============================================================
+ * This package designed for Magento COMMUNITY edition
+ * Freshcodes does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Freshcodes does not provide extension support in case of
+ * incorrect edition usage.
+ * ==============================================================
+ *
+ * @category    Freshcodes
+ * @package     Freshcodes_Fastorder
+ * @version     0.1.0
+ * @author      Freshcodes Team <developers@freshcodes.in>
+ *
+ */
+ -->
+<config>
+  <modules>
+    <Freshcodes_Fastorder>
+      <version>0.1.0</version>
+    </Freshcodes_Fastorder>
+  </modules>
+  <frontend>
+    <routers>
+      <fastorder>
+        <use>standard</use>
+          <args>
+            <module>Freshcodes_Fastorder</module>
+            <frontName>fastorder</frontName>
+          </args>
+      </fastorder>
+    </routers>
+		<layout>
+		  <updates>
+			<fastorder>
+			  <file>fastorder.xml</file>
+			</fastorder>
+		  </updates>
+		</layout>
+  </frontend>
+  <global>
+    <helpers>
+      <fastorder>
+        <class>Freshcodes_Fastorder_Helper</class>
+      </fastorder>
+    </helpers>
+	<blocks>
+	  <fastorder>
+		<class>Freshcodes_Fastorder_Block</class>
+	  </fastorder>
+	</blocks>
+	<models>
+	  <fastorder>
+		<class>Freshcodes_Fastorder_Model</class>
+		<resourceModel>fastorder_mysql4</resourceModel>
+	  </fastorder>
+	  <fastorder_mysql4>
+		<class>Freshcodes_Fastorder_Model_Mysql4</class>
+		<entities>		  
+			  <fastorderdetails>
+				<table>fastorderdetails</table>
+			  </fastorderdetails>		  
+			  <fastorderproduct>
+				<table>fastorderproduct</table>
+			  </fastorderproduct>
+			  <fastorderproductoption>
+				<table>fastorderproductoption</table>
+			  </fastorderproductoption>
+        </entities>
+	  </fastorder_mysql4>
+	</models>
+	<resources>
+	  <fastorder_setup>
+		<setup>
+		  <module>Freshcodes_Fastorder</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </fastorder_setup>
+	  <fastorder_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </fastorder_write>
+	  <fastorder_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </fastorder_read>
+	</resources>
+	
+	<template>
+		<email>
+			<fastorder_email_template module="fastorder">
+				<label>Fastorder custom email</label>
+				<file>fastorder_custom_email.html</file>
+				<type>html</type>
+			</fastorder_email_template>
+		</email>
+	</template>
+	<default>
+      <email>
+          <template>fastorder_email_template</template>
+      </email>
+    </default> 
+	
+  </global>
+  <admin>
+	<routers>
+	  <fastorder>
+	    <use>admin</use>
+		<args>
+		  <module>Freshcodes_Fastorder</module>
+		  <frontName>fastorder</frontName>
+		</args>
+	  </fastorder>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <fastorder module="fastorder">
+		<title>Fastorder</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <fastorderdetails module="fastorder">
+		    <title>Manage Fastorderdetails</title>
+			<sort_order>0</sort_order>
+			<action>fastorder/adminhtml_fastorderdetails</action>
+		  </fastorderdetails>
+		  <!--<fastorderproduct module="fastorder">
+		    <title>Manage Fastorderproduct</title>
+			<sort_order>10</sort_order>
+			<action>fastorder/adminhtml_fastorderproduct</action>
+		  </fastorderproduct>-->
+		</children>
+	  </fastorder>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<fastorder translate="title" module="fastorder">
+			  <title>Fastorder</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <fastorderdetails translate="title">
+			<title>Manage Fastorderdetails</title>
+			<sort_order>0</sort_order>
+		  </fastorderdetails>
+		  <fastorderproduct translate="title">
+			<title>Manage Fastorderproduct</title>
+			<sort_order>10</sort_order>
+		  </fastorderproduct>
+			  </children>
+			</fastorder>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<fastorder>
+		  <file>fastorder.xml</file>
+		</fastorder>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 

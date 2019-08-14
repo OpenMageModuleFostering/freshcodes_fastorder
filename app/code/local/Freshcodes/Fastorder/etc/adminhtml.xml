@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Freshcodes
+ *
+ * It is also available through the world-wide-web at this URL:
+ * http://freshcodes.in
+ *
+ * ==============================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * ==============================================================
+ * This package designed for Magento COMMUNITY edition
+ * Freshcodes does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * Freshcodes does not provide extension support in case of
+ * incorrect edition usage.
+ * ==============================================================
+ *
+ * @category    Freshcodes
+ * @package     Freshcodes_Fastorder
+ * @version     0.1.0
+ * @author      Freshcodes Team <developers@freshcodes.in>
+ *
+ */
+ -->
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<fastorder translate="title" module="fastorder">
+											<title>Fastorder Section</title>
+											<sort_order>0</sort_order>
+										</fastorder>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</config>
