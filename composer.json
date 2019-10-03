@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Freshcodes_Fastorder",
+    "name": "OpenMageModuleFostering\/Freshcodes_Fastorder",
     "type": "magento-module",
     "license": "OSL-3.0",
     "homepage": "",
     "description": "Fastorder Extension for Magento",
     "authors": [
-    {
-        "name": "freshcodes.in",
-        "email": "info@freshcodes.in"
-    }
-],
+        {
+            "name": "freshcodes.in",
+            "email": "info@freshcodes.in"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
